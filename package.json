@@ -1,0 +1,32 @@
+{
+  "name": "edcs-history",
+  "version": "1.0.0",
+  "description": "A tiny module which lets you push and update browser history.",
+  "author": "Edward Coleridge Smith <e.coleridgesmith@edcs.me>",
+  "homepage": "http://ecs.io",
+  "main": "src/history.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/edcs/history.git"
+  },
+  "bugs": {
+    "url": "https://github.com/edcs/history/issues"
+  },
+  "keywords": [
+    "url",
+    "history",
+    "html5"
+  ],
+  "analyze": true,
+  "license": "MIT",
+  "scripts": {
+    "compile": "webpack src/history.js history.min.js -p"
+  },
+  "dependencies": {
+    "edcs-has": "^1.0.0",
+    "edcs-url": "^1.0.0"
+  },
+  "devDependencies": {
+    "webpack": "1.7.2"
+  }
+}
