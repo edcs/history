@@ -1,10 +1,24 @@
 /*jshint node: true */
 "use strict";
 
-var has = require('edcs-has'),
-    url = require('edcs-url');
+var has = require('edcs-has');
+var qs = require('qs');
 
 module.exports = {
+
+    /**
+     * Build a query string.
+     *
+     * @param state
+     * @returns {*}
+     */
+    buildQueryString: function (state) {
+        if (typeof state === 'object') {
+            state = qs.stringify(state);
+        }
+
+        return '?' + state;
+    },
 
     /**
      * Pushes the new state to the browsers history.
@@ -13,7 +27,7 @@ module.exports = {
      * @return {void}
      */
     push: function (state) {
-        var queryString = url.buildQueryString(state);
+        var queryString = this.buildQueryString(state);
 
         if (has.history()) {
             window.history.pushState(state, null, queryString);
@@ -27,7 +41,7 @@ module.exports = {
      * @return {void}
      */
     replace: function (state) {
-        var queryString = url.buildQueryString(state);
+        var queryString = this.buildQueryString(state);
 
         if (has.history()) {
             window.history.replaceState(state, null, queryString);
