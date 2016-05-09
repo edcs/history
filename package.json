@@ -24,7 +24,7 @@
   },
   "dependencies": {
     "edcs-has": "^1.0.0",
-    "edcs-url": "^1.0.0"
+    "qs": "^6.2.0"
   },
   "devDependencies": {
     "webpack": "1.7.2"
