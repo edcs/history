@@ -14,7 +14,7 @@ module.exports = {
      */
     buildQueryString: function (state) {
         if (typeof state === 'object') {
-            return qs.stringify(state);
+            state = qs.stringify(state);
         }
 
         return '?' + state;
